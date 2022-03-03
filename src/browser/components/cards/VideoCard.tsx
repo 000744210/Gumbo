@@ -13,7 +13,7 @@ const Wrapper = styled(Card)`
 `;
 
 const Thumbnail = styled.div`
-  ${tw`flex-none mr-4`}
+  ${tw`flex-none ltr:mr-4 rtl:ml-4`}
 `;
 
 const ThumbnailPicture = styled.div`
@@ -27,7 +27,7 @@ const ThumbnailPicture = styled.div`
 `;
 
 const VideoDuration = styled.div`
-  ${tw`absolute bg-black/75 bottom-px flex font-medium px-1 right-px rounded text-white`}
+  ${tw`absolute bg-black/75 bottom-px flex font-medium px-1 ltr:right-px rtl:left-px rounded text-white`}
 
   font-feature-settings: "tnum";
 `;
