@@ -4,6 +4,7 @@
   "short_name": "Gumbo",
   "version": "0.0.0",
   "description": "Swollen companion keeping you updated on your Twitch experience",
+  "default_locale": "en",
   "applications": {
     "gecko": {
       "id": "{59a39734-1e66-452e-a7b8-cc79f72062f0}"

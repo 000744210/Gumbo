@@ -1,6 +1,8 @@
 import React, { FC, useMemo } from "react";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import { formatTime } from "@/browser/helpers/time";
 
 import Card from "../Card";
@@ -79,8 +81,8 @@ const ClipCard: FC<ClipCardProps> = (props) => {
         <Title title={clip.title}>{clip.title}</Title>
         <StreamTitle title={clip.broadcaster_name}>{clip.broadcaster_name}</StreamTitle>
         <Details>
-          <li>{createdAt?.toLocaleString()}</li>
-          <li>{clip.view_count} views</li>
+          <li>{createdAt.toLocaleString()}</li>
+          <li>{t("views", clip.view_count.toLocaleString())}</li>
         </Details>
       </Inner>
     </Wrapper>

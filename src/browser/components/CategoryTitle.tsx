@@ -2,6 +2,8 @@ import React, { FC, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import Image from "./Image";
 
 const Wrapper = styled.div`
@@ -90,9 +92,9 @@ const CategoryTitle: FC<CategoryTitleProps> = (props) => {
           <Name>{category.name}</Name>
         </Title>
         <TabList>
-          <Tab to="streams">Streams</Tab>
-          <Tab to="videos">Videos</Tab>
-          <Tab to="clips">Clips</Tab>
+          <Tab to="streams">{t("streams")}</Tab>
+          <Tab to="videos">{t("videos")}</Tab>
+          <Tab to="clips">{t("clips")}</Tab>
         </TabList>
       </Inner>
     </Wrapper>

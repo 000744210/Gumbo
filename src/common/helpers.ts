@@ -34,3 +34,5 @@ export function getBaseFontSize(value: string): string {
 
   return "14px";
 }
+
+export const t = browser.i18n.getMessage;

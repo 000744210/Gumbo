@@ -2,7 +2,7 @@ import ky from "ky";
 import { castArray, chunk, filter, find, map, reject, some, sortBy } from "lodash-es";
 import browser from "webextension-polyfill";
 
-import { setupErrorTracking } from "@/common/helpers";
+import { setupErrorTracking, t } from "@/common/helpers";
 import { Store, stores } from "@/common/stores";
 import { Dictionary } from "@/common/types";
 
@@ -161,8 +161,8 @@ async function refreshFollowedStreams(currentUser: any, showNotifications = true
           streams.map(async (stream) => {
             const create = (iconUrl = browser.runtime.getURL("icon-96.png")) =>
               browser.notifications.create(`stream:${stream.user_login}`, {
-                title: `${stream.user_name || stream.user_login} is online`,
-                contextMessage: stream.game_name,
+                title: t("userIsOnline", stream.user_name || stream.user_login),
+                contextMessage: t("clickToOpenPage"),
                 eventTime: Date.parse(stream.started_at),
                 message: stream.title,
                 isClickable: true,

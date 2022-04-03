@@ -4,6 +4,7 @@
   "short_name": "Gumbo",
   "version": "0.0.0",
   "description": "Swollen companion keeping you updated on your Twitch experience",
+  "default_locale": "en",
   "permissions": [
     "alarms",
     "background",

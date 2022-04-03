@@ -1,6 +1,8 @@
 import React, { FC, HTMLAttributes, useMemo } from "react";
 import tw, { css, styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import Card from "../Card";
 
 export interface WrapperProps {
@@ -93,14 +95,14 @@ const UserCard: FC<UserCardProps> = (props) => {
         items: [
           {
             type: "link",
-            children: "Popout",
+            children: t("popout"),
             onClick() {
               open(`https://twitch.tv/${user.login}/popout`, "_blank");
             },
           },
           {
             type: "link",
-            children: "Chat",
+            children: t("chat"),
             onClick() {
               open(`https://twitch.tv/${user.login}/chat`, "_blank");
             },
@@ -110,21 +112,21 @@ const UserCard: FC<UserCardProps> = (props) => {
           },
           {
             type: "link",
-            children: "About",
+            children: t("about"),
             onClick() {
               open(`https://twitch.tv/${user.login}/about`, "_blank");
             },
           },
           {
             type: "link",
-            children: "Schedule",
+            children: t("schedule"),
             onClick() {
               open(`https://twitch.tv/${user.login}/schedule`, "_blank");
             },
           },
           {
             type: "link",
-            children: "Videos",
+            children: t("videos"),
             onClick() {
               open(`https://twitch.tv/${user.login}/videos`, "_blank");
             },
@@ -139,8 +141,8 @@ const UserCard: FC<UserCardProps> = (props) => {
         <Title>
           <ChannelName>{user.display_name || user.login}</ChannelName>
         </Title>
-        <Detail title={user.description}>{user.description || "No description"}</Detail>
-        <Detail>{user.view_count.toLocaleString()} views</Detail>
+        <Detail title={user.description}>{user.description || t("noDescription")}</Detail>
+        <Detail>{t("views", user.view_count.toLocaleString())}</Detail>
       </Inner>
     </Wrapper>
   );

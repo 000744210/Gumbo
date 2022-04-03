@@ -60,7 +60,7 @@ const ViewerCount: FC<ViewerCountProps> = (props) => {
 
   return (
     <Wrapper type={stream.type} title={status?.title} className={props.className}>
-      {stream.viewer_count.toLocaleString("en-US")}
+      {stream.viewer_count.toLocaleString()}
       {status?.icon}
     </Wrapper>
   );

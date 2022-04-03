@@ -2,6 +2,8 @@ import { find, groupBy, orderBy } from "lodash-es";
 import React, { FC, useMemo, useState } from "react";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import { filterList, isEmpty } from "@/browser/helpers/array";
 import {
   useFollowedStreams,
@@ -81,11 +83,11 @@ const FollowedUsers: FC = () => {
     }
 
     if (isEmpty(followedUsers)) {
-      return <Splash>No following users</Splash>;
+      return <Splash>{t("noFollowingUsers")}</Splash>;
     }
 
     if (isEmpty(itemGroups)) {
-      return <Splash>No users found</Splash>;
+      return <Splash>{t("noUsersFound")}</Splash>;
     }
 
     return (
@@ -121,11 +123,11 @@ const FollowedUsers: FC = () => {
           options={[
             {
               value: "login",
-              label: "Name",
+              label: t("name"),
             },
             {
               value: "view_count",
-              label: "Views",
+              label: t("views"),
             },
           ]}
         />
@@ -135,11 +137,11 @@ const FollowedUsers: FC = () => {
           options={[
             {
               value: "asc",
-              label: "Ascending",
+              label: t("ascending"),
             },
             {
               value: "desc",
-              label: "Descending",
+              label: t("descending"),
             },
           ]}
         />
@@ -149,15 +151,15 @@ const FollowedUsers: FC = () => {
           options={[
             {
               value: null,
-              label: "Any",
+              label: t("any"),
             },
             {
               value: true,
-              label: "Online Only",
+              label: t("onlineOnly"),
             },
             {
               value: false,
-              label: "Offline Only",
+              label: t("offlineOnly"),
             },
           ]}
         />

@@ -3,6 +3,8 @@ import { groupBy, orderBy } from "lodash-es";
 import tw, { styled } from "twin.macro";
 import browser from "webextension-polyfill";
 
+import { t } from "@/common/helpers";
+
 import { filterList, isEmpty } from "@/browser/helpers/array";
 import {
   useFollowedStreams,
@@ -76,11 +78,11 @@ const FollowedStreams: FC = () => {
     }
 
     if (isEmpty(followedStreams)) {
-      return <Splash>No streams online</Splash>;
+      return <Splash>{t("noStreamsOnline")}</Splash>;
     }
 
     if (isEmpty(itemGroups)) {
-      return <Splash>No streams found</Splash>;
+      return <Splash>{t("noStreamsFound")}</Splash>;
     }
 
     return (
@@ -123,19 +125,19 @@ const FollowedStreams: FC = () => {
           options={[
             {
               value: "user_login",
-              label: "Broadcaster",
+              label: t("broadcaster"),
             },
             {
               value: "game_name",
-              label: "Category",
+              label: t("category"),
             },
             {
               value: "started_at",
-              label: "Uptime",
+              label: t("uptime"),
             },
             {
               value: "viewer_count",
-              label: "Viewers",
+              label: t("viewers"),
             },
           ]}
         />
@@ -145,11 +147,11 @@ const FollowedStreams: FC = () => {
           options={[
             {
               value: "asc",
-              label: "Ascending",
+              label: t("ascending"),
             },
             {
               value: "desc",
-              label: "Descending",
+              label: t("descending"),
             },
           ]}
         />

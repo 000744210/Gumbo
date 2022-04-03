@@ -1,6 +1,8 @@
 import React, { FC, HTMLAttributes, useMemo } from "react";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import Card from "../Card";
 import Image from "../Image";
 import Uptime from "../Uptime";
@@ -114,14 +116,14 @@ const StreamCard: FC<StreamCardProps> = (props) => {
         items: [
           {
             type: "link",
-            children: "Popout",
+            children: t("popout"),
             onClick() {
               open(`https://twitch.tv/${stream.user_login}/popout`, "_blank");
             },
           },
           {
             type: "link",
-            children: "Chat",
+            children: t("chat"),
             onClick() {
               open(`https://twitch.tv/${stream.user_login}/chat`, "_blank");
             },
@@ -131,21 +133,21 @@ const StreamCard: FC<StreamCardProps> = (props) => {
           },
           {
             type: "link",
-            children: "About",
+            children: t("about"),
             onClick() {
               open(`https://twitch.tv/${stream.user_login}/about`, "_blank");
             },
           },
           {
             type: "link",
-            children: "Schedule",
+            children: t("schedule"),
             onClick() {
               open(`https://twitch.tv/${stream.user_login}/schedule`, "_blank");
             },
           },
           {
             type: "link",
-            children: "Videos",
+            children: t("videos"),
             onClick() {
               open(`https://twitch.tv/${stream.user_login}/videos`, "_blank");
             },

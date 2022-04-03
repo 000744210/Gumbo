@@ -17,7 +17,7 @@ const Uptime: FC<UptimeProps> = (props) => {
   );
 
   return (
-    <div className={props.className} title={props.startDate.toLocaleString("en-US")}>
+    <div className={props.className} title={props.startDate.toLocaleString()}>
       {timeString}
     </div>
   );

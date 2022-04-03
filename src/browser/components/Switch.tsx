@@ -32,10 +32,9 @@ const Inner = styled.div`
 `;
 
 export interface SwitchProps {
-  value?: boolean;
-  disabled?: boolean;
   className?: string;
   disabled?: boolean;
+  value?: boolean;
   onChange?(checked: boolean): void;
 }
 

@@ -2,6 +2,8 @@ import React, { FC, useMemo, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import { filterList, isEmpty } from "@/browser/helpers/array";
 import { useClips } from "@/browser/helpers/queries";
 
@@ -63,7 +65,7 @@ const CategoryClips: FC = () => {
     }
 
     if (isEmpty(filteredClips)) {
-      return <Splash>No clips found</Splash>;
+      return <Splash>{t("noClipsFound")}</Splash>;
     }
 
     return (
@@ -79,7 +81,7 @@ const CategoryClips: FC = () => {
         {hasMore && (
           <LoadMore>
             <MoreButton isLoading={isLoadingMore} fetchMore={fetchMore}>
-              Load More
+              {t("loadMore")}
             </MoreButton>
           </LoadMore>
         )}
@@ -96,19 +98,19 @@ const CategoryClips: FC = () => {
           options={[
             {
               value: null,
-              label: "All Time",
+              label: t("allTime"),
             },
             {
               value: 86400000,
-              label: "Last 24 Hours",
+              label: t("lastHours", 24),
             },
             {
               value: 604800000,
-              label: "Last 7 Days",
+              label: t("lastDays", 7),
             },
             {
               value: 2592000000,
-              label: "Last 30 Days",
+              label: t("lastDays", 30),
             },
           ]}
         />

@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import { isEmpty } from "@/browser/helpers/array";
 import { useSearchCategories } from "@/browser/helpers/queries";
 
@@ -27,7 +29,7 @@ const SearchCategories: FC = () => {
   });
 
   if (searchQuery.length === 0) {
-    return <Splash>Start typing to search categories</Splash>;
+    return <Splash>{t("startTypingToSearchCategories")}</Splash>;
   }
 
   if (error) {
@@ -39,7 +41,7 @@ const SearchCategories: FC = () => {
   }
 
   if (isEmpty(categories)) {
-    return <Splash>No categories found</Splash>;
+    return <Splash>{t("noCategoriesFound")}</Splash>;
   }
 
   return (
@@ -55,7 +57,7 @@ const SearchCategories: FC = () => {
       {hasMore && (
         <LoadMore>
           <MoreButton isLoading={isLoadingMore} fetchMore={fetchMore}>
-            Load More
+            {t("loadMore")}
           </MoreButton>
         </LoadMore>
       )}

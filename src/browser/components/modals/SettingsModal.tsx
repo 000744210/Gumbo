@@ -3,9 +3,10 @@ import React, { FC, MouseEventHandler } from "react";
 import tw, { styled } from "twin.macro";
 import browser from "webextension-polyfill";
 
-import { useFollowedUsers, useSettings } from "@/browser/helpers/hooks";
-
 import { LANGUAGE_OPTIONS } from "@/common/constants";
+import { t } from "@/common/helpers";
+
+import { useFollowedUsers, useSettings } from "@/browser/helpers/hooks";
 
 import Accordion from "../Accordion";
 import Button from "../Button";
@@ -91,65 +92,67 @@ const SettingsModal: FC<SettingsModalProps> = (props) => {
   };
 
   return (
-    <Modal isOpen={props.isOpen} title="Settings" onClose={props.onClose}>
-      <StyledAccordion title="General">
+    <Modal isOpen={props.isOpen} title={t("settings")} onClose={props.onClose}>
+      <StyledAccordion title={t("general")}>
         <Section>
-          <FormField title="Font size">
+          <FormField title={t("fontSize")}>
             <Select
               {...register("general.fontSize")}
               fullWidth
               options={[
                 {
-                  label: "Smallest",
+                  label: t("smallest"),
                   value: "smallest",
                 },
                 {
-                  label: "Small",
+                  label: t("small"),
                   value: "small",
                 },
                 {
-                  label: "Medium",
+                  label: t("medium"),
                   value: "medium",
                 },
                 {
-                  label: "Large",
+                  label: t("large"),
                   value: "large",
                 },
                 {
-                  label: "Largest",
+                  label: t("largest"),
                   value: "largest",
                 },
               ]}
             />
           </FormField>
-          <FormField title="Theme">
+          <FormField title={t("theme")}>
             <Select
               {...register("general.theme")}
               fullWidth
               options={[
                 {
-                  label: "Dark",
+                  label: t("dark"),
                   value: "dark",
                 },
                 {
-                  label: "Light",
+                  label: t("light"),
                   value: "light",
                 },
               ]}
             />
           </FormField>
-          <StyledSwitch {...register("general.withBadge")}>Show icon badge</StyledSwitch>
+          <StyledSwitch {...register("general.withBadge")}>{t("showIconBadge")}</StyledSwitch>
         </Section>
       </StyledAccordion>
 
-      <StyledAccordion title="Notifications">
+      <StyledAccordion title={t("notifications")}>
         <Section>
-          <StyledSwitch {...register("notifications.enabled")}>Enable notifications</StyledSwitch>
+          <StyledSwitch {...register("notifications.enabled")}>
+            {t("enableNotifications")}
+          </StyledSwitch>
           <StyledSwitch
             {...register("notifications.withFilters")}
             disabled={!settings.notifications.enabled}
           >
-            Filter notifications by channel
+            {t("filterNotificationsByChannel")}
           </StyledSwitch>
         </Section>
         <Section>
@@ -164,19 +167,21 @@ const SettingsModal: FC<SettingsModalProps> = (props) => {
         </Section>
       </StyledAccordion>
 
-      <StyledAccordion title="Search">
-        <Section title="Channels">
-          <StyledSwitch {...register("channels.liveOnly")}>Show live channels only</StyledSwitch>
+      <StyledAccordion title={t("search")}>
+        <Section title={t("channels")}>
+          <StyledSwitch {...register("channels.liveOnly")}>
+            {t("showLiveChannelsOnly")}
+          </StyledSwitch>
         </Section>
       </StyledAccordion>
 
-      <StyledAccordion title="Streams">
+      <StyledAccordion title={t("streams")}>
         <Section>
           <StyledSwitch {...register("streams.withReruns")}>
-            Show Reruns in followed streams
+            {t("showRerunsInFollowedStreams")}
           </StyledSwitch>
           <StyledSwitch {...register("streams.withFilters")}>
-            Filter streams by language
+            {t("filterStreamsByLanguage")}
           </StyledSwitch>
         </Section>
         <Section>
@@ -199,7 +204,7 @@ const SettingsModal: FC<SettingsModalProps> = (props) => {
             </svg>
           }
         >
-          Import Settings
+          {t("importSettings")}
         </Button>
         <Button
           onClick={onExportClick}
@@ -211,7 +216,7 @@ const SettingsModal: FC<SettingsModalProps> = (props) => {
             </svg>
           }
         >
-          Export Settings
+          {t("exportSettings")}
         </Button>
       </ButtonGrid>
     </Modal>

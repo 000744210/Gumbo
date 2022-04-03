@@ -2,6 +2,8 @@ import React, { FC, useMemo, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import { filterList, isEmpty } from "@/browser/helpers/array";
 import { useVideos } from "@/browser/helpers/queries";
 
@@ -55,7 +57,7 @@ const CategoryVideos: FC = () => {
     }
 
     if (isEmpty(filteredVideos)) {
-      return <Splash>No videos found</Splash>;
+      return <Splash>{t("noVideosFound")}</Splash>;
     }
 
     return (
@@ -71,7 +73,7 @@ const CategoryVideos: FC = () => {
         {hasMore && (
           <LoadMore>
             <MoreButton isLoading={isLoadingMore} fetchMore={fetchMore}>
-              Load More
+              {t("loadMore")}
             </MoreButton>
           </LoadMore>
         )}

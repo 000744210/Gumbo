@@ -1,0 +1,209 @@
+{
+  "followedStreams": {
+    "message": "Followed Streams"
+  },
+  "followedUsers": {
+    "message": "Followed Users"
+  },
+  "topStreams": {
+    "message": "Top Streams"
+  },
+  "topCategories": {
+    "message": "Top Categories"
+  },
+  "search": {
+    "message": "Search"
+  },
+  "streams": {
+    "message": "Streams"
+  },
+  "videos": {
+    "message": "Videos"
+  },
+  "clips": {
+    "message": "Clips"
+  },
+  "selectAll": {
+    "message": "Select All"
+  },
+  "selectNone": {
+    "message": "Select None"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "aboutHelp": {
+    "message": "About & Help"
+  },
+  "logout": {
+    "message": "Logout"
+  },
+  "unknown": {
+    "message": "Unknown"
+  },
+  "repository": {
+    "message": "Repository"
+  },
+  "support": {
+    "message": "Support"
+  },
+  "releaseNotes": {
+    "message": "Release Notes"
+  },
+  "general": {
+    "message": "General"
+  },
+  "fontSize": {
+    "message": "Font size"
+  },
+  "smallest": {
+    "message": "Smallest"
+  },
+  "small": {
+    "message": "Small"
+  },
+  "medium": {
+    "message": "Medium"
+  },
+  "large": {
+    "message": "Large"
+  },
+  "largest": {
+    "message": "Largest"
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "dark": {
+    "message": "Dark"
+  },
+  "light": {
+    "message": "Light"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "channels": {
+    "message": "Channels"
+  },
+  "importSettings": {
+    "message": "Import Settings"
+  },
+  "exportSettings": {
+    "message": "Export Settings"
+  },
+  "enableNotifications": {
+    "message": "Enable notifications"
+  },
+  "filterNotificationsByChannel": {
+    "message": "Filter notifications by channel"
+  },
+  "showLiveChannelsOnly": {
+    "message": "Show live channels only"
+  },
+  "showRerunsInFollowedStreams": {
+    "message": "Show Reruns in followed streams"
+  },
+  "filterStreamsByLanguage": {
+    "message": "Filter streams by language"
+  },
+  "popout": {
+    "message": "Popout"
+  },
+  "chat": {
+    "message": "Chat"
+  },
+  "about": {
+    "message": "About"
+  },
+  "schedule": {
+    "message": "Schedule"
+  },
+  "views": {
+    "message": "$1 views"
+  },
+  "noDescription": {
+    "message": "No description"
+  },
+  "noStreamsOnline": {
+    "message": "No streams online"
+  },
+  "noStreamsFound": {
+    "message": "No streams found"
+  },
+  "broadcaster": {
+    "message": "Broadcaster"
+  },
+  "category": {
+    "message": "Category"
+  },
+  "uptime": {
+    "message": "Uptime"
+  },
+  "viewers": {
+    "message": "Viewers"
+  },
+  "ascending": {
+    "message": "Ascending"
+  },
+  "descending": {
+    "message": "Descending"
+  },
+  "noFollowingUsers": {
+    "message": "No following users"
+  },
+  "noUsersFound": {
+    "message": "No users found"
+  },
+  "name": {
+    "message": "Name"
+  },
+  "any": {
+    "message": "Any"
+  },
+  "onlineOnly": {
+    "message": "Online only"
+  },
+  "offlineOnly": {
+    "message": "Offline only"
+  },
+  "noCategoriesFound": {
+    "message": "No categories found"
+  },
+  "loadMore": {
+    "message": "Load more"
+  },
+  "loginWithTwitch": {
+    "message": "Login with Twitch"
+  },
+  "userIsOnline": {
+    "message": "$1 is online"
+  },
+  "clickToOpenPage": {
+    "message": "Click to open the channel page"
+  },
+  "noClipsFound": {
+    "message": "No clips found"
+  },
+  "allTime": {
+    "message": "All time"
+  },
+  "lastHours": {
+    "message": "Last $1 hours"
+  },
+  "lastDays": {
+    "message": "Last $1 days"
+  },
+  "noVideosFound": {
+    "message": "No videos found"
+  },
+  "startTypingToSearchCategories": {
+    "message": "Start typing to search categories"
+  },
+  "startTypingToSearchChannels": {
+    "message": "Start typing to search channels"
+  },
+  "showIconBadge": {
+    "message": "Show icon badge"
+  }
+}

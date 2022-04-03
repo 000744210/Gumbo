@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import tw, { css, styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import Card from "../Card";
 
 export interface WrapperProps {
@@ -62,14 +64,14 @@ const ChannelCard: FC<ChannelCardProps> = (props) => {
         items: [
           {
             type: "link",
-            children: "Popout",
+            children: t("popout"),
             onClick() {
               open(`https://twitch.tv/${channel.broadcaster_login}/popout`, "_blank");
             },
           },
           {
             type: "link",
-            children: "Chat",
+            children: t("chat"),
             onClick() {
               open(`https://twitch.tv/${channel.broadcaster_login}/chat`, "_blank");
             },
@@ -79,21 +81,21 @@ const ChannelCard: FC<ChannelCardProps> = (props) => {
           },
           {
             type: "link",
-            children: "About",
+            children: t("about"),
             onClick() {
               open(`https://twitch.tv/${channel.broadcaster_login}/about`, "_blank");
             },
           },
           {
             type: "link",
-            children: "Schedule",
+            children: t("schedule"),
             onClick() {
               open(`https://twitch.tv/${channel.broadcaster_login}/schedule`, "_blank");
             },
           },
           {
             type: "link",
-            children: "Videos",
+            children: t("videos"),
             onClick() {
               open(`https://twitch.tv/${channel.broadcaster_login}/videos`, "_blank");
             },

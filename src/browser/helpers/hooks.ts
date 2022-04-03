@@ -1,6 +1,5 @@
 import { xor } from "lodash-es";
 import { useEffect, useState } from "react";
-import browser from "webextension-polyfill";
 
 import { Store, stores } from "@/common/stores";
 import { FollowedStreamState, FollowedUserState } from "@/common/types";
@@ -143,12 +142,4 @@ export function usePinnedUsers(): UsePinnedUsersReturn {
       toggle: (value) => store.set((state) => xor(state, [value])),
     },
   ];
-}
-
-export function useTranslation() {
-  return {
-    dir: browser.i18n.getMessage("@@bidi_dir"),
-    locale: browser.i18n.getMessage("@@ui_locale"),
-    t: browser.i18n.getMessage,
-  };
 }

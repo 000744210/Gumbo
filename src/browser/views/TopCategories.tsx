@@ -2,6 +2,8 @@ import React, { FC, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import { filterList, isEmpty } from "@/browser/helpers/array";
 import { useTopCategories } from "@/browser/helpers/queries";
 
@@ -50,7 +52,7 @@ const TopCategories: FC = () => {
     }
 
     if (isEmpty(filteredCategories)) {
-      return <Splash>No categories found</Splash>;
+      return <Splash>{t("noCategoriesFound")}</Splash>;
     }
 
     return (
@@ -66,7 +68,7 @@ const TopCategories: FC = () => {
         {hasMore && (
           <LoadMore>
             <MoreButton isLoading={isLoadingMore} fetchMore={fetchMore}>
-              Load More
+              {t("loadMore")}
             </MoreButton>
           </LoadMore>
         )}

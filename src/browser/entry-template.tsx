@@ -10,7 +10,7 @@ import tw, { GlobalStyles, css, theme } from "twin.macro";
 
 import { getBaseFontSize, setupErrorTracking } from "@/common/helpers";
 
-import { useSettings } from "./helpers/hooks";
+import { useSettings, useTranslation } from "./helpers/hooks";
 import { backgroundFetcher } from "./helpers/queries";
 
 const wrapper: EntryWrapper<ExoticComponent> = (Component, { target }) => {
@@ -18,6 +18,12 @@ const wrapper: EntryWrapper<ExoticComponent> = (Component, { target }) => {
 
   const App: FC = () => {
     const [settings] = useSettings();
+
+    const { dir } = useTranslation();
+
+    useEffect(() => {
+      document.documentElement.dir = dir;
+    }, [dir]);
 
     useEffect(() => {
       document.documentElement.classList.toggle("dark", settings.general.theme === "dark");

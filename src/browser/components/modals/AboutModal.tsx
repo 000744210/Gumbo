@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import ExternalAnchor from "../ExternalAnchor";
 import Hero from "../Hero";
 import Modal from "../Modal";
@@ -19,21 +21,19 @@ interface AboutModalProps {
   isOpen?: boolean;
 }
 
-const AboutModal: FC<AboutModalProps> = (props) => {
-  return (
-    <Modal isOpen={props.isOpen} onClose={props.onClose}>
-      <Section>
-        <Hero />
-      </Section>
-      <Section>
-        <LinkList>
-          <Link href="https://github.com/seldszar/gumbo">Repository</Link>
-          <Link href="https://github.com/seldszar/gumbo/issues">Support</Link>
-          <Link href="https://github.com/seldszar/gumbo/releases">Release Notes</Link>
-        </LinkList>
-      </Section>
-    </Modal>
-  );
-};
+const AboutModal: FC<AboutModalProps> = (props) => (
+  <Modal isOpen={props.isOpen} onClose={props.onClose}>
+    <Section>
+      <Hero />
+    </Section>
+    <Section>
+      <LinkList>
+        <Link href="https://github.com/seldszar/gumbo">{t("repository")}</Link>
+        <Link href="https://github.com/seldszar/gumbo/issues">{t("support")}</Link>
+        <Link href="https://github.com/seldszar/gumbo/releases">{t("releaseNotes")}</Link>
+      </LinkList>
+    </Section>
+  </Modal>
+);
 
 export default AboutModal;

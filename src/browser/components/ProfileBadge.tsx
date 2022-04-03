@@ -1,6 +1,8 @@
 import React, { FC, useState } from "react";
 import tw, { styled } from "twin.macro";
 
+import { t } from "@/common/helpers";
+
 import { useAccessToken } from "../helpers/hooks";
 
 import AboutModal from "./modals/AboutModal";
@@ -36,14 +38,14 @@ const ProfileBadge: FC<ProfileBadgeProps> = (props) => {
           items: [
             {
               type: "link",
-              children: "Settings",
+              children: t("settings"),
               onClick() {
                 setSettingsOpen(true);
               },
             },
             {
               type: "link",
-              children: "About & Help",
+              children: t("aboutHelp"),
               onClick() {
                 setAboutOpen(true);
               },
@@ -53,7 +55,7 @@ const ProfileBadge: FC<ProfileBadgeProps> = (props) => {
             },
             {
               type: "link",
-              children: "Logout",
+              children: t("logout"),
               onClick() {
                 store.set(null);
               },
